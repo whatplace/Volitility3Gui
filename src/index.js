@@ -1,6 +1,10 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, ipcRenderer } = require('electron');
 const path = require('path');
 
+
+
+//const DataStorage = require('./storage');
+//const Data = new DataStorage({name: 'Python Output'})
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) { // eslint-disable-line global-require
@@ -12,7 +16,15 @@ const createWindow = () => {
   const mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
+    backgroundColor: '#9E9E9E',
+    webPreferences:{
+      nodeIntegration: true
+    }
   });
+
+
+
+
 
   // and load the index.html of the app.
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
@@ -20,34 +32,16 @@ const createWindow = () => {
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
 
-  let {PythonShell} = require('python-shell');
 
 
-  var options = {
-      scriptPath : path.join('volatility3'),
-      args : ['-f F:\MemSamples\windows\sample001.bin', 'windows.info'],
-      //args : ['-h'],
-      //mode: "json",
-  };
-  
-  let pyshell = new PythonShell('vol.py', options);
-  
-  pyshell.on('message', function(message) {
-     
-      console.log(message);
-      console.log(typeof message);
-
-      
-      
-  });
-  pyshell.end(function (err,code,signal) {
-    if (err) throw err;
-    console.log('The exit code was: ' + code);
-    console.log('The exit signal was: ' + signal);
-    console.log('finished');
-  });
 
 };
+//////////////////////////////////////////////////////////// work on implementing datatables and jquery
+//  app.$ = app.jquery = require('jquery');
+//  app.dt = require('datatables.net')();
+//  app.$('#table_id').DataTable();
+////////////////////////////////////////////////////////////
+
 
 
 // This method will be called when Electron has finished
@@ -74,3 +68,4 @@ app.on('activate', () => {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and import them here.
+
