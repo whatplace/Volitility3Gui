@@ -1,3 +1,5 @@
+//WIP?
+
 const Storage = require('electron-store')
 
 class DataStorage extends Storage {

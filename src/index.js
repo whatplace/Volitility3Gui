@@ -18,11 +18,13 @@ const createWindow = () => {
     height: 600,
     backgroundColor: '#9E9E9E',
     webPreferences:{
-      nodeIntegration: true
+      nodeIntegration: true,
+      worldSafeExecuteJavaScript: true
     }
+    
   });
 
-
+  getPlugins();
 
 
 
@@ -42,6 +44,25 @@ const createWindow = () => {
 //  app.$('#table_id').DataTable();
 ////////////////////////////////////////////////////////////
 
+//WIP need to either figure out framework or retrieve list of plugins off of error
+function getPlugins() {
+  const path = require('path');
+  let {PythonShell} = require('python-shell');
+  var options = {
+    scriptPath : path.join('volatility3'),
+    args : ['plugins'],
+
+};
+
+  let pyInit = new PythonShell('vol.py', options);
+  pyInit.on('error', function (err) {
+    console.log('error', err);
+    //teststring = 'argument plugin: invalid choice plugins (choose from banners.Banners, configwriter.ConfigWriter)'
+    
+    //test = teststring.match(/argument plugin: invalid choice plugins * \(*\)/g)
+    //console.log(test)
+  });
+}
 
 
 // This method will be called when Electron has finished

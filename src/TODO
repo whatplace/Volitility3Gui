@@ -1,0 +1,4 @@
+Just got the python code to run in console on click in app.
+Get it to display in dynamic datatable next see https://github.com/Xainey/powershell-electron-demo/blob/master/renderer.js for example
+
+Running into error with JSON output in renderer.js when trying to parse the output "message" likely due to the end not having a ] at end
