@@ -3,33 +3,26 @@
   <head>
     <meta charset="UTF-8">
     <title>Volatility 3 Capstone</title>
-    <link rel="stylesheet" href="index.css">
+    <!--<link rel="stylesheet" href="index.css">-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <!-- <meta http-equiv="Content-Security-Policy" content="script-src 'self'"> -->
-    <script src="renderer.js"></script>
 
   </head>
   <body>
 
     <h1 style="text-align: center;">Volatility 3 Capstone</h1>
     <div class="input-group">
-    <div class="custom-file" style="text-align: center;"><input id="inputFile" class="custom-file-input" type="file" aria-describedby="inputGroupFileAddon01" accept="*" /></div>
+      <div class="input-group">
+        <div class="custom-file"; text-align: center>
+          <input type="file" class="custom-file-input" id="input" aria-describedby="inputGroupFile">
+          <label class="custom-file-label" for="input">Select File</label>
+        </div>
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon" onclick="getData()">  Run Command  </button>
+        </div>
+      </div>
         
-        <script>
-          document.addEventListener('drop', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-        
-            for (const f of e.dataTransfer.files) {
-              console.log('File(s) you dragged here: ', f.path)
-            }
-          });
-          document.addEventListener('dragover', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-          });
-        </script>
-
-      <input type="button" onclick="getData()" value="Run Command" />
     </div>
 
     <!-- Output -->
@@ -38,53 +31,9 @@
 </div>
 
 
+<script src="renderer.js"></script>
     
 
-
-
-    <script>
-      const electron = require('electron');
-      const ipcRenderer = electron.ipcRenderer;
-
-      
-      ipcRenderer.on('stdout',(event,data) =>
-      {
-        console.log(data)
-        //document.getElementById('stdout').innerHTML= data;
-      });
-
-      ipcRenderer.on('pythonError',(event,data) =>
-      {
-        console.log(data)
-      });
-
-      ipcRenderer.on('pythonEnd',(event,data) =>
-      {
-        console.log(data)
-      });
-
-    </script>
-
-
-
-    <table id="table_id" class="display">
-      <thead>
-          <tr>
-              <th>Column 1</th>
-              <th>Column 2</th>
-          </tr>
-      </thead>
-      <tbody>
-          <tr>
-              <td>Row 1 Data 1</td>
-              <td>Row 1 Data 2</td>
-          </tr>
-          <tr>
-              <td>Row 2 Data 1</td>
-              <td>Row 2 Data 2</td>
-          </tr>
-      </tbody>
-  </table>
 
 
 

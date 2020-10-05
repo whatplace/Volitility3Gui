@@ -1,5 +1,6 @@
 
 
+const { data } = require('jquery');
 const $ = require('jquery');
 const { stdout } = require('process');
 const dt = require('datatables.net')();
@@ -17,27 +18,30 @@ function getData() {
       filePath = document.getElementsByTagName('input')[0].files[0].path;
         var options = {
             scriptPath : path.join('volatility3'),
-            args : ['-qrjson','-f',filePath, 'windows.info'],
+            pythonOptions: ['-u'],
+            args : ['-qrjson','-f',filePath, 'windows.psscan.PsScan'],
 
         };
         
         let pyshell = new PythonShell('vol.py', options);
-        outputt = {};
+
+        
+        
+        var logs ='';
         pyshell.on('message', function(message) {
-            
-            //console.log(JSON.parse(message))
-            
-            //console.log(JSON.parse(message));
-           // let data = JSON.parse(message);
-            console.log(message);
-           //NEED TO PULL SECTION OUT INTO ITS OWN FUNCTION TO BE CALLED ONCE ALL OUTPUT IS COLLECTED AND STORED 
-           /*
-            message => {
-              console.log(message)
-              let data = message
-              //let data = JSON.parse(message)
-              console.log(data)
+          logs = logs + message;
+        });
       
+        pyshell.on('error', function (err) {
+          console.log(' error ', err);
+        });
+      
+        pyshell.end(function (code,signal) {
+          if(code = 1){
+            
+              let data = JSON.parse(logs+']')
+              console.log(data)
+              
               // generate DataTables columns dynamically
               let columns = [];
               Object.keys(data[0]).forEach( key => columns.push({ title: key, data: key }) )
@@ -45,29 +49,19 @@ function getData() {
               // Create DataTable
               $('#output').DataTable({
                   data: data,
-                  columns: columns
+                  columns: columns,
+                  destroy: true,
+                  "search": {
+                    "regex": true,
+                    "smart": false
+                  }
               });
-              
-            }
-            */
-            //mainWindow.webContents.send('pythonOutput',message)     J
 
-            //const updatedData = Data.updateVolitilityData(message).volitilityOutput   
+              
+              
+            
+          }
         });
-      
-        pyshell.on('error', function (err) {
-          //console.log(' error ', err);
-          //mainWindow.webContents.send('pythonError',err)
-        });
-      
-        pyshell.end(function (code,signal) {
-          //console.log('The exit code was: ' + code);
-          //console.log('The exit signal was: ' + signal);
-          //console.log('finished');
-          //console.log(filePath);
-          //mainWindow.webContents.send('PythonEnd',code)
-        });
-        //let data = JSON.parse(output);
         
       }
       

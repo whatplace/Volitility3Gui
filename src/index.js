@@ -3,9 +3,6 @@ const path = require('path');
 
 
 
-//const DataStorage = require('./storage');
-//const Data = new DataStorage({name: 'Python Output'})
-
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) { // eslint-disable-line global-require
   app.quit();
@@ -38,11 +35,7 @@ const createWindow = () => {
 
 
 };
-//////////////////////////////////////////////////////////// work on implementing datatables and jquery
-//  app.$ = app.jquery = require('jquery');
-//  app.dt = require('datatables.net')();
-//  app.$('#table_id').DataTable();
-////////////////////////////////////////////////////////////
+
 
 //WIP need to either figure out framework or retrieve list of plugins off of error
 function getPlugins() {
@@ -86,7 +79,4 @@ app.on('activate', () => {
     createWindow();
   }
 });
-
-// In this file you can include the rest of your app's specific main process
-// code. You can also put them in separate files and import them here.
 
