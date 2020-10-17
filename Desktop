@@ -1,0 +1,994 @@
+
+[
+  {
+    "Data": "Automagic",
+    "__children": [
+      {
+        "Data": "ConstructionMagic",
+        "__children": []
+      },
+      {
+        "Data": "LayerStacker",
+        "__children": []
+      },
+      {
+        "Data": "SymbolBannerCache",
+        "__children": []
+      },
+      {
+        "Data": "MacBannerCache",
+        "__children": []
+      },
+      {
+        "Data": "LinuxBannerCache",
+        "__children": []
+      },
+      {
+        "Data": "SymbolFinder",
+        "__children": []
+      },
+      {
+        "Data": "MacSymbolFinder",
+        "__children": []
+      },
+      {
+        "Data": "LinuxSymbolFinder",
+        "__children": []
+      },
+      {
+        "Data": "KernelPDBScanner",
+        "__children": []
+      },
+      {
+        "Data": "WintelHelper",
+        "__children": []
+      },
+      {
+        "Data": "WinSwapLayers",
+        "__children": []
+      }
+    ]
+  },
+  {
+    "Data": "Requirement",
+    "__children": [
+      {
+        "Data": "SimpleTypeRequirement",
+        "__children": []
+      },
+      {
+        "Data": "BooleanRequirement",
+        "__children": []
+      },
+      {
+        "Data": "IntRequirement",
+        "__children": []
+      },
+      {
+        "Data": "StringRequirement",
+        "__children": []
+      },
+      {
+        "Data": "URIRequirement",
+        "__children": []
+      },
+      {
+        "Data": "BytesRequirement",
+        "__children": []
+      },
+      {
+        "Data": "ClassRequirement",
+        "__children": []
+      },
+      {
+        "Data": "ConstructableRequirementInterface",
+        "__children": []
+      },
+      {
+        "Data": "TranslationLayerRequirement",
+        "__children": []
+      },
+      {
+        "Data": "SymbolTableRequirement",
+        "__children": []
+      },
+      {
+        "Data": "ConfigurableRequirementInterface",
+        "__children": []
+      },
+      {
+        "Data": "ComplexListRequirement",
+        "__children": []
+      },
+      {
+        "Data": "LayerListRequirement",
+        "__children": []
+      },
+      {
+        "Data": "TranslationLayerRequirement",
+        "__children": []
+      },
+      {
+        "Data": "SymbolTableRequirement",
+        "__children": []
+      },
+      {
+        "Data": "MultiRequirement",
+        "__children": []
+      },
+      {
+        "Data": "ComplexListRequirement",
+        "__children": []
+      },
+      {
+        "Data": "LayerListRequirement",
+        "__children": []
+      },
+      {
+        "Data": "ListRequirement",
+        "__children": []
+      },
+      {
+        "Data": "ChoiceRequirement",
+        "__children": []
+      },
+      {
+        "Data": "VersionRequirement",
+        "__children": []
+      },
+      {
+        "Data": "PluginRequirement",
+        "__children": []
+      }
+    ]
+  },
+  {
+    "Data": "Layer",
+    "__children": [
+      {
+        "Data": "TranslationLayerInterface",
+        "__children": []
+      },
+      {
+        "Data": "LinearlyMappedLayer",
+        "__children": []
+      },
+      {
+        "Data": "Intel",
+        "__children": []
+      },
+      {
+        "Data": "IntelPAE",
+        "__children": []
+      },
+      {
+        "Data": "WindowsIntelPAE",
+        "__children": []
+      },
+      {
+        "Data": "Intel32e",
+        "__children": []
+      },
+      {
+        "Data": "WindowsIntel32e",
+        "__children": []
+      },
+      {
+        "Data": "WindowsMixin",
+        "__children": []
+      },
+      {
+        "Data": "WindowsIntel",
+        "__children": []
+      },
+      {
+        "Data": "WindowsIntelPAE",
+        "__children": []
+      },
+      {
+        "Data": "WindowsIntel32e",
+        "__children": []
+      },
+      {
+        "Data": "WindowsIntel",
+        "__children": []
+      },
+      {
+        "Data": "RegistryHive",
+        "__children": []
+      },
+      {
+        "Data": "PdbMultiStreamFormat",
+        "__children": []
+      },
+      {
+        "Data": "PdbMSFStream",
+        "__children": []
+      },
+      {
+        "Data": "SegmentedLayer",
+        "__children": []
+      },
+      {
+        "Data": "WindowsCrashDump32Layer",
+        "__children": []
+      },
+      {
+        "Data": "WindowsCrashDump64Layer",
+        "__children": []
+      },
+      {
+        "Data": "Elf64Layer",
+        "__children": []
+      },
+      {
+        "Data": "LimeLayer",
+        "__children": []
+      },
+      {
+        "Data": "VmwareLayer",
+        "__children": []
+      },
+      {
+        "Data": "NonLinearlySegmentedLayer",
+        "__children": []
+      },
+      {
+        "Data": "SegmentedLayer",
+        "__children": []
+      },
+      {
+        "Data": "WindowsCrashDump32Layer",
+        "__children": []
+      },
+      {
+        "Data": "WindowsCrashDump64Layer",
+        "__children": []
+      },
+      {
+        "Data": "Elf64Layer",
+        "__children": []
+      },
+      {
+        "Data": "LimeLayer",
+        "__children": []
+      },
+      {
+        "Data": "VmwareLayer",
+        "__children": []
+      },
+      {
+        "Data": "QemuSuspendLayer",
+        "__children": []
+      },
+      {
+        "Data": "BufferDataLayer",
+        "__children": []
+      },
+      {
+        "Data": "FileLayer",
+        "__children": []
+      }
+    ]
+  },
+  {
+    "Data": "LayerStacker",
+    "__children": [
+      {
+        "Data": "MacIntelStacker",
+        "__children": []
+      },
+      {
+        "Data": "LinuxIntelStacker",
+        "__children": []
+      },
+      {
+        "Data": "WindowsIntelStacker",
+        "__children": []
+      },
+      {
+        "Data": "WindowsCrashDumpStacker",
+        "__children": []
+      },
+      {
+        "Data": "Elf64Stacker",
+        "__children": []
+      },
+      {
+        "Data": "LimeStacker",
+        "__children": []
+      },
+      {
+        "Data": "QemuStacker",
+        "__children": []
+      },
+      {
+        "Data": "VmwareStacker",
+        "__children": []
+      }
+    ]
+  },
+  {
+    "Data": "Object",
+    "__children": [
+      {
+        "Data": "Void",
+        "__children": []
+      },
+      {
+        "Data": "Function",
+        "__children": []
+      },
+      {
+        "Data": "PrimitiveObject",
+        "__children": []
+      },
+      {
+        "Data": "Boolean",
+        "__children": []
+      },
+      {
+        "Data": "Integer",
+        "__children": []
+      },
+      {
+        "Data": "Pointer",
+        "__children": []
+      },
+      {
+        "Data": "Float",
+        "__children": []
+      },
+      {
+        "Data": "Char",
+        "__children": []
+      },
+      {
+        "Data": "Bytes",
+        "__children": []
+      },
+      {
+        "Data": "String",
+        "__children": []
+      },
+      {
+        "Data": "BitField",
+        "__children": []
+      },
+      {
+        "Data": "Enumeration",
+        "__children": []
+      },
+      {
+        "Data": "Array",
+        "__children": []
+      },
+      {
+        "Data": "AggregateType",
+        "__children": []
+      },
+      {
+        "Data": "StructType",
+        "__children": []
+      },
+      {
+        "Data": "GenericIntelProcess",
+        "__children": []
+      },
+      {
+        "Data": "EPROCESS",
+        "__children": []
+      },
+      {
+        "Data": "proc",
+        "__children": []
+      },
+      {
+        "Data": "module",
+        "__children": []
+      },
+      {
+        "Data": "task_struct",
+        "__children": []
+      },
+      {
+        "Data": "POOL_HEADER",
+        "__children": []
+      },
+      {
+        "Data": "POOL_HEADER_VISTA",
+        "__children": []
+      },
+      {
+        "Data": "POOL_TRACKER_BIG_PAGES",
+        "__children": []
+      },
+      {
+        "Data": "OBJECT_HEADER",
+        "__children": []
+      },
+      {
+        "Data": "KSYSTEM_TIME",
+        "__children": []
+      },
+      {
+        "Data": "MMVAD_SHORT",
+        "__children": []
+      },
+      {
+        "Data": "MMVAD",
+        "__children": []
+      },
+      {
+        "Data": "EX_FAST_REF",
+        "__children": []
+      },
+      {
+        "Data": "DEVICE_OBJECT",
+        "__children": []
+      },
+      {
+        "Data": "DRIVER_OBJECT",
+        "__children": []
+      },
+      {
+        "Data": "OBJECT_SYMBOLIC_LINK",
+        "__children": []
+      },
+      {
+        "Data": "FILE_OBJECT",
+        "__children": []
+      },
+      {
+        "Data": "KMUTANT",
+        "__children": []
+      },
+      {
+        "Data": "ETHREAD",
+        "__children": []
+      },
+      {
+        "Data": "UNICODE_STRING",
+        "__children": []
+      },
+      {
+        "Data": "LIST_ENTRY",
+        "__children": []
+      },
+      {
+        "Data": "TOKEN",
+        "__children": []
+      },
+      {
+        "Data": "KTHREAD",
+        "__children": []
+      },
+      {
+        "Data": "HMAP_ENTRY",
+        "__children": []
+      },
+      {
+        "Data": "CMHIVE",
+        "__children": []
+      },
+      {
+        "Data": "CM_KEY_BODY",
+        "__children": []
+      },
+      {
+        "Data": "CM_KEY_NODE",
+        "__children": []
+      },
+      {
+        "Data": "CM_KEY_VALUE",
+        "__children": []
+      },
+      {
+        "Data": "fileglob",
+        "__children": []
+      },
+      {
+        "Data": "vm_map_object",
+        "__children": []
+      },
+      {
+        "Data": "vnode",
+        "__children": []
+      },
+      {
+        "Data": "vm_map_entry",
+        "__children": []
+      },
+      {
+        "Data": "socket",
+        "__children": []
+      },
+      {
+        "Data": "inpcb",
+        "__children": []
+      },
+      {
+        "Data": "queue_entry",
+        "__children": []
+      },
+      {
+        "Data": "ifnet",
+        "__children": []
+      },
+      {
+        "Data": "sockaddr_dl",
+        "__children": []
+      },
+      {
+        "Data": "sockaddr",
+        "__children": []
+      },
+      {
+        "Data": "sysctl_oid",
+        "__children": []
+      },
+      {
+        "Data": "elf",
+        "__children": []
+      },
+      {
+        "Data": "elf_sym",
+        "__children": []
+      },
+      {
+        "Data": "elf_phdr",
+        "__children": []
+      },
+      {
+        "Data": "fs_struct",
+        "__children": []
+      },
+      {
+        "Data": "mm_struct",
+        "__children": []
+      },
+      {
+        "Data": "super_block",
+        "__children": []
+      },
+      {
+        "Data": "vm_area_struct",
+        "__children": []
+      },
+      {
+        "Data": "qstr",
+        "__children": []
+      },
+      {
+        "Data": "dentry",
+        "__children": []
+      },
+      {
+        "Data": "struct_file",
+        "__children": []
+      },
+      {
+        "Data": "list_head",
+        "__children": []
+      },
+      {
+        "Data": "files_struct",
+        "__children": []
+      },
+      {
+        "Data": "mount",
+        "__children": []
+      },
+      {
+        "Data": "vfsmount",
+        "__children": []
+      },
+      {
+        "Data": "kobject",
+        "__children": []
+      },
+      {
+        "Data": "hist_entry",
+        "__children": []
+      },
+      {
+        "Data": "IMAGE_DOS_HEADER",
+        "__children": []
+      },
+      {
+        "Data": "IMAGE_NT_HEADERS",
+        "__children": []
+      },
+      {
+        "Data": "KDDEBUGGER_DATA64",
+        "__children": []
+      },
+      {
+        "Data": "SERVICE_RECORD",
+        "__children": []
+      },
+      {
+        "Data": "SERVICE_HEADER",
+        "__children": []
+      },
+      {
+        "Data": "_TCP_LISTENER",
+        "__children": []
+      },
+      {
+        "Data": "_TCP_ENDPOINT",
+        "__children": []
+      },
+      {
+        "Data": "_UDP_ENDPOINT",
+        "__children": []
+      },
+      {
+        "Data": "_LOCAL_ADDRESS",
+        "__children": []
+      },
+      {
+        "Data": "_LOCAL_ADDRESS_WIN10_UDP",
+        "__children": []
+      },
+      {
+        "Data": "UnionType",
+        "__children": []
+      },
+      {
+        "Data": "ClassType",
+        "__children": []
+      },
+      {
+        "Data": "ExecutiveObject",
+        "__children": []
+      },
+      {
+        "Data": "DEVICE_OBJECT",
+        "__children": []
+      },
+      {
+        "Data": "DRIVER_OBJECT",
+        "__children": []
+      },
+      {
+        "Data": "OBJECT_SYMBOLIC_LINK",
+        "__children": []
+      },
+      {
+        "Data": "FILE_OBJECT",
+        "__children": []
+      },
+      {
+        "Data": "KMUTANT",
+        "__children": []
+      },
+      {
+        "Data": "EPROCESS",
+        "__children": []
+      }
+    ]
+  },
+  {
+    "Data": "Plugin",
+    "__children": [
+      {
+        "Data": "Statistics",
+        "__children": []
+      },
+      {
+        "Data": "Timeliner",
+        "__children": []
+      },
+      {
+        "Data": "PsList",
+        "__children": []
+      },
+      {
+        "Data": "Handles",
+        "__children": []
+      },
+      {
+        "Data": "PoolScanner",
+        "__children": []
+      },
+      {
+        "Data": "BigPools",
+        "__children": []
+      },
+      {
+        "Data": "HiveScan",
+        "__children": []
+      },
+      {
+        "Data": "HiveList",
+        "__children": []
+      },
+      {
+        "Data": "PrintKey",
+        "__children": []
+      },
+      {
+        "Data": "Certificates",
+        "__children": []
+      },
+      {
+        "Data": "Banners",
+        "__children": []
+      },
+      {
+        "Data": "ConfigWriter",
+        "__children": []
+      },
+      {
+        "Data": "FrameworkInfo",
+        "__children": []
+      },
+      {
+        "Data": "IsfInfo",
+        "__children": []
+      },
+      {
+        "Data": "LayerWriter",
+        "__children": []
+      },
+      {
+        "Data": "PsList",
+        "__children": []
+      },
+      {
+        "Data": "PsTree",
+        "__children": []
+      },
+      {
+        "Data": "Bash",
+        "__children": []
+      },
+      {
+        "Data": "Check_afinfo",
+        "__children": []
+      },
+      {
+        "Data": "Check_creds",
+        "__children": []
+      },
+      {
+        "Data": "Lsmod",
+        "__children": []
+      },
+      {
+        "Data": "Check_idt",
+        "__children": []
+      },
+      {
+        "Data": "Check_modules",
+        "__children": []
+      },
+      {
+        "Data": "Check_syscall",
+        "__children": []
+      },
+      {
+        "Data": "Elfs",
+        "__children": []
+      },
+      {
+        "Data": "Keyboard_notifiers",
+        "__children": []
+      },
+      {
+        "Data": "Lsof",
+        "__children": []
+      },
+      {
+        "Data": "Malfind",
+        "__children": []
+      },
+      {
+        "Data": "Maps",
+        "__children": []
+      },
+      {
+        "Data": "tty_check",
+        "__children": []
+      },
+      {
+        "Data": "PsList",
+        "__children": []
+      },
+      {
+        "Data": "Bash",
+        "__children": []
+      },
+      {
+        "Data": "Lsmod",
+        "__children": []
+      },
+      {
+        "Data": "Check_syscall",
+        "__children": []
+      },
+      {
+        "Data": "Check_sysctl",
+        "__children": []
+      },
+      {
+        "Data": "Check_trap_table",
+        "__children": []
+      },
+      {
+        "Data": "Ifconfig",
+        "__children": []
+      },
+      {
+        "Data": "Mount",
+        "__children": []
+      },
+      {
+        "Data": "List_Files",
+        "__children": []
+      },
+      {
+        "Data": "Lsof",
+        "__children": []
+      },
+      {
+        "Data": "Malfind",
+        "__children": []
+      },
+      {
+        "Data": "Netstat",
+        "__children": []
+      },
+      {
+        "Data": "Maps",
+        "__children": []
+      },
+      {
+        "Data": "Psaux",
+        "__children": []
+      },
+      {
+        "Data": "PsTree",
+        "__children": []
+      },
+      {
+        "Data": "Socket_filters",
+        "__children": []
+      },
+      {
+        "Data": "Timers",
+        "__children": []
+      },
+      {
+        "Data": "Trustedbsd",
+        "__children": []
+      },
+      {
+        "Data": "Info",
+        "__children": []
+      },
+      {
+        "Data": "DllList",
+        "__children": []
+      },
+      {
+        "Data": "Modules",
+        "__children": []
+      },
+      {
+        "Data": "SSDT",
+        "__children": []
+      },
+      {
+        "Data": "CmdLine",
+        "__children": []
+      },
+      {
+        "Data": "DriverScan",
+        "__children": []
+      },
+      {
+        "Data": "DriverIrp",
+        "__children": []
+      },
+      {
+        "Data": "Envars",
+        "__children": []
+      },
+      {
+        "Data": "FileScan",
+        "__children": []
+      },
+      {
+        "Data": "GetServiceSIDs",
+        "__children": []
+      },
+      {
+        "Data": "GetSIDs",
+        "__children": []
+      },
+      {
+        "Data": "VadInfo",
+        "__children": []
+      },
+      {
+        "Data": "Malfind",
+        "__children": []
+      },
+      {
+        "Data": "Memmap",
+        "__children": []
+      },
+      {
+        "Data": "ModScan",
+        "__children": []
+      },
+      {
+        "Data": "MutantScan",
+        "__children": []
+      },
+      {
+        "Data": "NetScan",
+        "__children": []
+      },
+      {
+        "Data": "Privs",
+        "__children": []
+      },
+      {
+        "Data": "PsScan",
+        "__children": []
+      },
+      {
+        "Data": "PsTree",
+        "__children": []
+      },
+      {
+        "Data": "Strings",
+        "__children": []
+      },
+      {
+        "Data": "SymlinkScan",
+        "__children": []
+      },
+      {
+        "Data": "VirtMap",
+        "__children": []
+      },
+      {
+        "Data": "UserAssist",
+        "__children": []
+      }
+    ]
+  },
+  {
+    "Data": "Renderer",
+    "__children": [
+      {
+        "Data": "CLIRenderer",
+        "__children": []
+      },
+      {
+        "Data": "QuickTextRenderer",
+        "__children": []
+      },
+      {
+        "Data": "CSVRenderer",
+        "__children": []
+      },
+      {
+        "Data": "PrettyTextRenderer",
+        "__children": []
+      },
+      {
+        "Data": "JsonRenderer",
+        "__children": []
+      },
+      {
+        "Data": "JsonLinesRenderer",
+        "__children": []
+      }
+    ]
+  }
+]

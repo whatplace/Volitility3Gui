@@ -13,13 +13,15 @@ function getData() {
     
     if(typeof document.getElementsByTagName('input')[0].files[0] === 'undefined'){
       console.log('Error file not defined');
+      
     }
     else{
       filePath = document.getElementsByTagName('input')[0].files[0].path;
         var options = {
             scriptPath : path.join('volatility3'),
             pythonOptions: ['-u'],
-            args : ['-qrjson','-f',filePath, 'windows.psscan.PsScan'],
+            //args : ['-qrjson','-f',filePath, 'windows.psscan.PsScan'],
+            args : ['-qrjson','frameworkinfo.FrameworkInfo'],
 
         };
         
