@@ -11,8 +11,8 @@ if (require('electron-squirrel-startup')) { // eslint-disable-line global-requir
 const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1200,
+    height: 800,
     backgroundColor: '#9E9E9E',
     webPreferences:{
       nodeIntegration: true,
@@ -21,7 +21,7 @@ const createWindow = () => {
     
   });
 
-  getPlugins();
+  //getPlugins();
 
 
 
@@ -29,14 +29,14 @@ const createWindow = () => {
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools();
+  //mainWindow.webContents.openDevTools();
 
 
 
 
 };
 
-
+/*
 //WIP need to either figure out framework or retrieve list of plugins off of error
 function getPlugins() {
   const path = require('path');
@@ -56,7 +56,7 @@ function getPlugins() {
     //console.log(test)
   });
 }
-
+*/
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
