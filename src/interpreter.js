@@ -1,6 +1,5 @@
 
 
-const { data } = require('jquery');
 const $ = require('jquery');
 const { stdout } = require('process');
 const dt = require('datatables.net')();
@@ -28,7 +27,8 @@ function getData() {
       command = document.getElementById('command').value
       console.log(command)
         var options = {
-            scriptPath : path.join('volatility3'),
+            //scriptPath : path.join('src','volatility3'),
+            scriptPath : path.join('resources','app','src','volatility3'),
             pythonOptions: ['-u'],
             args : ['-qrjson','-f',filePath, command],
             //args : ['-qrjson','frameworkinfo.FrameworkInfo'],
@@ -46,37 +46,49 @@ function getData() {
       
         pyshell.on('error', function (err) {
           console.log(' error ', err);
+          alert('Error Running Command')
         });
       
         pyshell.end(function (code,signal) {
           if(code = 1){
-            
-              let data = JSON.parse(logs+']')
+              let data = ''
+              if(logs=='') {alert('Error')}
+              else{
+              data = JSON.parse(logs+']')
               console.log(data)
               
               // generate DataTables columns dynamically
               let columns = [];
               Object.keys(data[0]).forEach( key => columns.push({ title: key, data: key }) )
-      
+              console.log(columns)
               // Create DataTable
               
-              var table = $('#output').DataTable({
+              if ( $.fn.DataTable.isDataTable('#output') ) {
+                console.log("Destroying DT");
+                $('#output').DataTable().clear().destroy();
+                $('#output').empty();
+                console.log("Table Status: "+ $.fn.DataTable.isDataTable('#output'));
+              }
+              
+
+             
+              $('#output').DataTable({ 
                   dom: 'Bfrtip',
                   data: data,
                   columns: columns,
-                  responsive: true,
-
-                  //destroy: true,
+                  processing: true,
                   "search": {
                     "regex": true,
                     "smart": false
                   },
                   buttons: [
                     'csv', 'excel', 'pdf'
-                    ]
+                    ],
+                    
               });
+            }
               
-            
+              
           }
         });
         

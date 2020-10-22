@@ -21,7 +21,6 @@ const createWindow = () => {
     
   });
 
-  //getPlugins();
 
 
 
