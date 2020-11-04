@@ -1,3 +1,4 @@
 {
-    "npm.enableRunFromFolder": true
+    "npm.enableRunFromFolder": true,
+    "python.pythonPath": "C:\\Python38\\python.exe"
 }

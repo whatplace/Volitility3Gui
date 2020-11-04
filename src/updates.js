@@ -20,3 +20,8 @@ $('#platform').on('click', function(event){
 }
   
 )})
+
+$('#pythonError').on('click', function (event) {
+  $('#pythonError').hide();
+  console.log('test');
+});

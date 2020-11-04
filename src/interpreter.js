@@ -20,6 +20,9 @@ function getData() {
     
     if(typeof document.getElementsByTagName('input')[0].files[0] === 'undefined'){
       console.log('Error file not defined');
+      //document.getElementById("pythonError").textContent = 'Hello World';
+      document.getElementById('pythonError').innerHTML = 'Error file not defined';
+      $('#pythonError').show();
       
     }
     else{
@@ -27,10 +30,12 @@ function getData() {
       command = document.getElementById('command').value
       console.log(command)
         var options = {
-            //scriptPath : path.join('src','volatility3'),
-            scriptPath : path.join('resources','app','src','volatility3'),
+            //Change script path before exporting with npm make
+              scriptPath : path.join('src','volatility3'),
+            //scriptPath : path.join('resources','app','src','volatility3'),
             pythonOptions: ['-u'],
             args : ['-qrjson','-f',filePath, command],
+            pythonPath: 'C:\\Python38\\python.exe',
             //args : ['-qrjson','frameworkinfo.FrameworkInfo'],
 
         };
@@ -46,13 +51,15 @@ function getData() {
       
         pyshell.on('error', function (err) {
           console.log(' error ', err);
-          alert('Error Running Command')
+          document.getElementById('pythonError').innerHTML = 'Error running command';
+          $('#pythonError').show();
         });
       
         pyshell.end(function (code,signal) {
           if(code = 1){
               let data = ''
-              if(logs=='') {alert('Error')}
+              if(logs=='') {
+              }
               else{
               data = JSON.parse(logs+']')
               console.log(data)
