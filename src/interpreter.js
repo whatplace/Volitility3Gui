@@ -12,14 +12,11 @@
 
 const $ = require("jquery");
 
-window.jsZip = require("jszip")
-require("pdfmake");
+
 require("datatables.net-bs4")();
-require("datatables.net-buttons-bs4")();
-require("datatables.net-buttons/js/buttons.html5.js")();
-require("datatables.net-colreorder-bs4")();
 require("datatables.net-responsive-bs4")();
 
+//function to run python interpreter and display as a datatable
 function getData() {
   const path = require("path");
   let { PythonShell } = require("python-shell");
@@ -90,7 +87,6 @@ function getData() {
           }
           // Create DataTable
           $("#output").DataTable({
-            dom: "Bfrtip",
             data: data,
             columns: columns,
             processing: true,
@@ -98,12 +94,19 @@ function getData() {
               regex: true,
               smart: false,
             },
-            buttons: ["csv", "excel", "pdf"],
           });
 
-          //$("#output").buttons().container().appendTo( $('.col-sm-6:eq(0)', $("#output").table().container() ) );
         }
       }
     });
   }
+}
+
+
+//Function to be created to save json as a csv, excel or straight json
+//To all be used to save logs?
+function exportData(format,data){
+
+
+
 }

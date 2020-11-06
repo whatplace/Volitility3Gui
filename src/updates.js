@@ -36,3 +36,9 @@ $('#pythonError').on('click', function (event) {
   $('#pythonError').hide();
   console.log('test');
 });
+
+//Future save buttons
+$('#save').on('click', function (event) {
+  
+  console.log('test');
+});
