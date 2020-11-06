@@ -3,15 +3,16 @@
 //	CS498 Capstone
 //  Filename: interpreter.js
 //
+//  Overview:
 //  Utilized for obtaining results from vol.py
+//  Results are returned and merged back into JSON from Stdio
+//  Results are passed into a dataframe
+//  Errors are returned as an error banner
 //
 
 const $ = require("jquery");
-const { stdout } = require("process");
-const dt = require("datatables.net")();
-const dtbs = require("datatables.net-bs4")(window, $);
 
-require("jszip");
+window.jsZip = require("jszip")
 require("pdfmake");
 require("datatables.net-bs4")();
 require("datatables.net-buttons-bs4")();
@@ -46,11 +47,14 @@ function getData() {
 
     let pyshell = new PythonShell("vol.py", options);
 
+    //Log the output of the message for datatable into a string (Comming in Json Format through STDIO)
     var logs = "";
     pyshell.on("message", function (message) {
       logs = logs + message;
     });
 
+    //Returns error if volatility has an error. 
+    //To be expanded to have it clickable with greater detail.
     pyshell.on("error", function (err) {
       console.log(" error ", err);
       document.getElementById("pythonError").innerHTML =
@@ -61,19 +65,21 @@ function getData() {
     pyshell.end(function (code, signal) {
       if ((code = 1)) {
         let data = "";
+        //Error nothing is passed vars are cleared
         if (logs == "") {
         } else {
+          //Appends final ']' to json query as it is chopped by PythonShell
           data = JSON.parse(logs + "]");
           console.log(data);
 
-          // generate DataTables columns dynamically
+          // Generate DataTables columns dynamically based on JSON key
           let columns = [];
           Object.keys(data[0]).forEach((key) =>
             columns.push({ title: key, data: key })
           );
           console.log(columns);
-          // Create DataTable
-
+          
+          // Checks to see if table currently exists and deletes before next is created
           if ($.fn.DataTable.isDataTable("#output")) {
             console.log("Destroying DT");
             $("#output").DataTable().clear().destroy();
@@ -82,7 +88,7 @@ function getData() {
               "Table Status: " + $.fn.DataTable.isDataTable("#output")
             );
           }
-
+          // Create DataTable
           $("#output").DataTable({
             dom: "Bfrtip",
             data: data,
@@ -94,6 +100,8 @@ function getData() {
             },
             buttons: ["csv", "excel", "pdf"],
           });
+
+          //$("#output").buttons().container().appendTo( $('.col-sm-6:eq(0)', $("#output").table().container() ) );
         }
       }
     });
