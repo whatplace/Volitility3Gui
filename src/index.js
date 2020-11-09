@@ -58,7 +58,7 @@ const template = [
            label: 'Update Volatility',
            click(){
             const download = require("download-git-repo");
-            download('volatilityfoundation/volatility3', './src', function (err) {
+            download('volatilityfoundation/volatility3', './src/volatility3', function (err) {
               console.log(err ? 'Error' : 'Success') })
            }
         }

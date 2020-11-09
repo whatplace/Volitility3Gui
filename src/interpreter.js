@@ -31,7 +31,7 @@ function getData() {
     $("#pythonError").show();
   } else {
     filePath = document.getElementsByTagName("input")[0].files[0].path;
-    command = document.getElementById("command").value;
+    command = document.getElementById("platform").value +"."+ document.getElementById("command").value.toLowerCase() +"."+ document.getElementById("command").value;
     console.log(command);
     var options = {
       //Change script path before exporting with npm make
@@ -43,6 +43,7 @@ function getData() {
       //args : ['-qrjson','frameworkinfo.FrameworkInfo'],
     };
 
+    console.log(options);
     let pyshell = new PythonShell("vol.py", options);
 
     //Log the output of the message for datatable into a string (Comming in Json Format through STDIO)
@@ -112,9 +113,3 @@ function exportData(format,data){
 
 }
 
-function updateVolatility(){
-
-  download('volatilityfoundation/volatility3', 'test/tmp', function (err) {
-    console.log(err ? 'Error' : 'Success') })
-
-}
