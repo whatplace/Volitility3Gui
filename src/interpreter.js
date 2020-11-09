@@ -15,6 +15,7 @@ const $ = require("jquery");
 
 require("datatables.net-bs4")();
 require("datatables.net-responsive-bs4")();
+require("download-git-repo");
 
 //function to run python interpreter and display as a datatable
 function getData() {
@@ -108,5 +109,12 @@ function getData() {
 function exportData(format,data){
 
 
+
+}
+
+function updateVolatility(){
+
+  download('volatilityfoundation/volatility3', 'test/tmp', function (err) {
+    console.log(err ? 'Error' : 'Success') })
 
 }

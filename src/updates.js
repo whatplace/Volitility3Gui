@@ -34,7 +34,6 @@ $('#platform').on('click', function(event){
 // Removes pop-up for errors when clicked
 $('#pythonError').on('click', function (event) {
   $('#pythonError').hide();
-  console.log('test');
 });
 
 //Future save buttons
