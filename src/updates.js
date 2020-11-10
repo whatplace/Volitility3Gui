@@ -15,8 +15,8 @@ $(document).on('change', '.custom-file-input', function (event) {
 
 // Updates the command list based on platform selected
 $('#platform').on('click', function(event){
-  console.log("test")
   let platformChosen = document.getElementById('platform');
+  
   let value = platformChosen[platformChosen.selectedIndex].value;
   let nodeList = document.getElementById("command").querySelectorAll("option");
   
@@ -24,10 +24,12 @@ $('#platform').on('click', function(event){
    
    if(option.classList.contains(value)){
       option.style.display="block";
+      $('#command').removeAttr("disabled");
     }else{
       option.style.display="none";
     }
 }
+
   
 )})
 
@@ -36,8 +38,13 @@ $('#pythonError').on('click', function (event) {
   $('#pythonError').hide();
 });
 
+
+
+
 //Future save buttons
 $('#save').on('click', function (event) {
   
   console.log('test');
 });
+
+

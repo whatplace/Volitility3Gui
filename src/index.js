@@ -8,10 +8,10 @@
 //  Used to create the electron window and load the index.html to it
 //
 
-const download = require("download-git-repo");
 const { app, BrowserWindow, ipcRenderer, Menu } = require("electron");
 const { DownloadItem } = require("electron/main");
 const path = require("path");
+require("./menu.js");
 
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
@@ -39,85 +39,10 @@ const createWindow = () => {
   //mainWindow.webContents.openDevTools();
 };
 
-//const template = require("./menu.js");
+const template = require("./menu.js");
 
-const template = [
-  {
-     label: 'File',
-     submenu: [
-        {
-           role: 'undo'
-        },
-        {
-           role: 'redo'
-        },
-        {
-           type: 'separator'
-        },
-        {
-           label: 'Update Volatility',
-           click(){
-            const download = require("download-git-repo");
-            download('volatilityfoundation/volatility3', './src/volatility3', function (err) {
-              console.log(err ? 'Error' : 'Success') })
-           }
-        }
-     ]
-  },
-  
-  {
-     label: 'View',
-     submenu: [
-        {
-           role: 'reload'
-        },
-        {
-           role: 'toggledevtools'
-        },
-        {
-           type: 'separator'
-        },
-        {
-           role: 'resetzoom'
-        },
-        {
-           role: 'zoomin'
-        },
-        {
-           role: 'zoomout'
-        },
-        {
-           type: 'separator'
-        },
-        {
-           role: 'togglefullscreen'
-        }
-     ]
-  },
-  
-  {
-     role: 'window',
-     submenu: [
-        {
-           role: 'minimize'
-        },
-        {
-           role: 'close'
-        }
-     ]
-  },
-  
-  {
-     role: 'help',
-     submenu: [
-        {
-           label: 'Learn More'
-        }
-     ]
-  }
-]
-const menu = Menu.buildFromTemplate(template)
-Menu.setApplicationMenu(menu)
+const menu = Menu.buildFromTemplate(template);
+Menu.setApplicationMenu(menu);
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
