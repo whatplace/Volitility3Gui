@@ -9,7 +9,6 @@
 //
 
 const { app, BrowserWindow, ipcRenderer, Menu } = require("electron");
-const { DownloadItem } = require("electron/main");
 const path = require("path");
 require("./menu.js");
 

@@ -25,8 +25,12 @@ const template = [
            click(){
             let { PythonShell } = require("python-shell");
             const path = require("path");
-            scriptPath: path.join("src", "volatility3"),
-            PythonShell.run(path.join("src", "pythonDepend.py"), null , function (err) {
+            // Prod
+            const scriptPath = path.join("resources","app","src", "pythonDepend.py")
+            // Dev
+            //const scriptPath = path.join("src", "pythonDepend.py")
+
+            PythonShell.run(scriptPath, null , function (err) {
                 if (err) throw err;
                 console.log('finished');
               });

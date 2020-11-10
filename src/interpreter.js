@@ -35,8 +35,8 @@ function getData() {
     console.log(command);
     var options = {
       //Change script path before exporting with npm make
-      scriptPath: path.join("src", "volatility3"),
-      //scriptPath : path.join('resources','app','src','volatility3'),
+      //scriptPath: path.join("src", "volatility3"),
+      scriptPath : path.join('resources','app','src','volatility3'),
       pythonOptions: ["-u"],
       args: ["-qrjson", "-f", filePath, command],
       pythonPath: "C:\\Python38\\python.exe",

@@ -72,5 +72,8 @@
     "electron-packager": "^15.1.0",
     "mocha": "^8.2.1",
     "spectron": "^12.0.0"
-  }
+  },
+  "directories":{
+    "volatility3": "src/volatility3"
+} 
 }
