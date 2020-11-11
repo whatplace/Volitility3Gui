@@ -1,9 +1,19 @@
+//
+//	Christopher Place
+//	CS498 Capstone
+//  Filename: menu.js
+//
+//  Overview:
+//  Creates menu template to be loaded into electron app at initialization.
+//  Commands run in this section occur outside of Chrome console.
+//
+
 const template = [
   {
     label: "File",
     submenu: [
       {
-        // Updates volatility 3 from github
+        // Updates Volatility 3 from GitHub
         label: "Update Volatility",
         id: "updateVolatility",
         click() {
