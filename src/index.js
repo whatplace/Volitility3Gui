@@ -12,7 +12,6 @@ const { app, BrowserWindow, ipcRenderer, Menu } = require("electron");
 const path = require("path");
 require("./menu.js");
 
-
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require("electron-squirrel-startup")) {
   // eslint-disable-line global-require
