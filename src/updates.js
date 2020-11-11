@@ -13,6 +13,24 @@ $(document).on('change', '.custom-file-input', function (event) {
     $(this).next('.custom-file-label').html(event.target.files[0].name);
 })
 
+// Once the html page loads, query python to have the possible plugins gathered
+$( document ).ready(function() {
+  let { PythonShell } = require("python-shell");
+          const path = require("path");
+          // Prod
+          //const scriptPath = path.join("resources","app","src","plugins.py");
+          // Dev
+          const scriptPath = path.join("src", "plugins.py");
+
+          PythonShell.run(scriptPath, null, function (err,plugins) {
+            console.log(
+              err
+                ? "Error getting list"
+                : JSON.parse(plugins)
+            );
+          });
+});
+
 // Updates the command list based on platform selected
 $('#platform').on('click', function(event){
   let platformChosen = document.getElementById('platform');
