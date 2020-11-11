@@ -95,3 +95,7 @@ out/
 #builds
 release-builds/
 installers/
+
+#vscode
+.vscode/
+VolWorkspace.code-workspace
