@@ -27,7 +27,7 @@ const createWindow = () => {
       nodeIntegration: true,
       worldSafeExecuteJavaScript: true,
     },
-    icon: 'src/icon.png',
+     icon: 'src/icon.png',
   });
 
   // and load the index.html of the app.
