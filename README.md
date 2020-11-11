@@ -16,13 +16,13 @@ Volatility3GUI is an implemenation of the commandline tool Volatility 3
 
   - Windows 64-bit Build
       ```bash
-      electron-packager . volatility3Gui --platform win32 --arch x64 --prune=true --icon=src/icon.ico --out release-builds/'
+      electron-packager . volatility3Gui --platform win32 --arch x64 --prune=true --icon=src/icon.ico --out release-builds/
       ```
 
 
   - Linux Build
       ```bash
-      electron-packager . volatility3Gui --platform linux --arch x64 --prune=true --out release-builds/'
+      electron-packager . volatility3Gui --platform linux --arch x64 --prune=true --out release-builds/
       ```
 
   
