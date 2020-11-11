@@ -10,7 +10,6 @@
 
 const { app, BrowserWindow, ipcRenderer, Menu } = require("electron");
 const path = require("path");
-require("./menu.js");
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require("electron-squirrel-startup")) {
@@ -28,6 +27,7 @@ const createWindow = () => {
       nodeIntegration: true,
       worldSafeExecuteJavaScript: true,
     },
+    icon: 'src/icon.png',
   });
 
   // and load the index.html of the app.

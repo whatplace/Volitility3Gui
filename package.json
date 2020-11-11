@@ -1,8 +1,8 @@
 {
-  "name": "volatilitygui",
+  "name": "Volatility3Gui",
   "productName": "volatility3gui",
   "version": "1.0.0",
-  "description": "Electron GUI Application of Volitilty 3 CLI Framework",
+  "description": "Electron GUI Application of Volitilty 3 CLI Framework for Christopher Place's Capstone",
   "main": "src/index.js",
   "scripts": {
     "start": "electron-forge start",
@@ -20,7 +20,9 @@
   "license": "MIT",
   "config": {
     "forge": {
-      "packagerConfig": {},
+      "packagerConfig": {
+        "icon": "./src/icon"
+      },
       "makers": [
         {
           "name": "@electron-forge/maker-squirrel",
