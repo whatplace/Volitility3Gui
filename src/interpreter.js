@@ -30,12 +30,7 @@ function getData() {
     $("#pythonError").show();
   } else {
     filePath = document.getElementsByTagName("input")[0].files[0].path;
-    command =
-      document.getElementById("platform").value +
-      "." +
-      document.getElementById("command").value.toLowerCase() +
-      "." +
-      document.getElementById("command").value;
+    command = document.getElementById("command").value;
     var options = {
       //Disable pythonPath before export
       //Replace scriptPath before export
