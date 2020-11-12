@@ -28,7 +28,9 @@ const createWindow = () => {
       worldSafeExecuteJavaScript: true,
     },
      icon: 'src/icon.png',
+     frame: false,
   });
+  //mainWindow.setMenu(null);
 
   // and load the index.html of the app.
   mainWindow.loadFile(path.join(__dirname, "index.html"));
@@ -37,10 +39,6 @@ const createWindow = () => {
   //mainWindow.webContents.openDevTools();
 };
 
-const template = require("./menu.js");
-
-const menu = Menu.buildFromTemplate(template);
-Menu.setApplicationMenu(menu);
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.

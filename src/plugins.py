@@ -8,9 +8,6 @@
 #       Command ran by Updater.js in order to get dropdown options for Windows, Mac & Linux
 #
 import json
-from volatility.framework import constants, interfaces
-from volatility import framework, plugins
-import volatility
 from typing import List
 import sys
 import os
@@ -20,6 +17,9 @@ vol_dir = os.path.join(os.path.dirname(
 #print (vol_dir)
 sys.path.insert(0, vol_dir)
 # print(sys.path)
+from volatility.framework import constants, interfaces
+from volatility import framework, plugins
+import volatility
 
 
 def get_plugins():

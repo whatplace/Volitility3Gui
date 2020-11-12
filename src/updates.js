@@ -39,6 +39,21 @@ function pluginUpdate(){
   });
 }
 
+function volatilityUpdate(){
+  const download = require("download-git-repo");
+          download(
+            "volatilityfoundation/volatility3",
+            "./src/volatility3",
+            function (err) {
+              console.log(
+                err
+                  ? "Error downloading latest git updates for Volatility"
+                  : "Success downloading latest git updates for Volatility"
+              );
+            }
+          );
+}
+
 
 
 // Once the html page loads, query python to have the possible plugins gathered and added to command list
