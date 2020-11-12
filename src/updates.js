@@ -17,16 +17,18 @@ $(document).on('change', '.custom-file-input', function (event) {
 $( document ).ready(function() {
   let { PythonShell } = require("python-shell");
           const path = require("path");
-          // Prod
-          //const scriptPath = path.join("resources","app","src","plugins.py");
-          // Dev
-          const scriptPath = path.join("src", "plugins.py");
-
-          PythonShell.run(scriptPath, null, function (err,plugins) {
+          var options = {
+            //Disable pythonPath before export
+            pythonPath: "C:\\Python38\\python.exe",
+            //Switch before export
+            scriptPath: path.join("src"),
+            //scriptPath : path.join('resources','app','src','plugins.py'),
+          };
+          PythonShell.run('plugins.py', options, function (err,plugins) {
             console.log(
               err
-                ? "Error getting list"
-                : JSON.parse(plugins)
+                ? "Error Updating Plugin List"
+                : "Plugin List Updated"
             );
           });
 });

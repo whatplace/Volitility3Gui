@@ -46,8 +46,6 @@ function getData() {
       //
       pythonOptions: ["-u"],
       args: ["-qrjson", "-f", filePath, command],
-      //Disable path before export
-      pythonPath: "C:\\Python38\\python.exe",
       //args : ['-qrjson','frameworkinfo.FrameworkInfo'],
     };
 
