@@ -25,33 +25,39 @@
       crossorigin="anonymous"
     />
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-          <li class="nav-item dropdown" style="list-style-type: none;">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Settings
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#" onclick="pluginUpdate()">Update Plugins </a>
-              <a class="dropdown-item" href="#" onclick="volatilityUpdate()">Update Volatility</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#" onclick="window.close()">Exit</a>
-          
-          </li>
-        </ul>
-          <div class="d-flex flex-row-reverse" >
-            <button type="button" class="btn btn-outline-secondary btn-lg" style="float:right" onclick="window.close()">Exit</button>
-          </div>
 
-    </nav>
 
 
     <!-- Dependencies End -->
     <title>Volatility 3 Capstone</title>
   </head>
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark"style="-webkit-app-region:drag">
+  <div>
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0" style="-webkit-app-region:no-drag">
+        <li class="nav-item dropdown ">
+          <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Settings
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#" onclick="pluginUpdate()">Update Plugins </a>
+            <a class="dropdown-item" href="#" onclick="volatilityUpdate()">Update Volatility</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#" onclick="window.close()">Exit</a>
+        
+        </li>
+      </ul>
+    </div>
+      <a class="navbar-brand mx-auto" href="#">
+        <img src="./icon.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        <strong> Volatility 3 GUI Capstone</strong>
+      </a>
+        <div class="d-flex flex-row-reverse " >
+          <button type="button" class="btn btn-outline-danger btn-lg" style="float:right; -webkit-app-region:no-drag" onclick="window.close()">Exit</button>
+        </div>
+
+  </nav>
   <body>
-    <h1 style="text-align: center">Volatility 3 Capstone</h1>
-    <div class="mx-auto w-75 input-group">
+    <div class="mx-auto w-75 input-group pt-5 pb-2">
       <div class="custom-file" ; text-align: center>
         <input
           type="file"
@@ -64,7 +70,7 @@
     </div>
 
     <div
-      class="row justify-content-center top-buffer"
+      class="row justify-content-center top-buffer pb-2"
       role="group"
       aria-label="Button group with nested dropdown"
     >
@@ -79,7 +85,7 @@
         <option selected disabled>Choose Command</option>
       </select>
 
-      <div class="btn-group" role="group">
+      <div class="btn-group " role="group">
         <button
           type="button"
           class="btn btn-secondary"
@@ -92,10 +98,26 @@
     </div>
 
     <div
-      class="mx-auto w-75 alert alert-warning alert-dismissible"
+      class="mx-auto w-75 alert alert-warning alert-dismissible p-2"
       role="alert"
-      id="pythonError"
+      id="alertError"
       style="display: none; text-align: center"
+    >
+      <button
+        type="button"
+        class="close"
+        data-dismiss="alert"
+        aria-label="Close"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+    <div
+    class="mx-auto w-75 alert alert-success alert-dismissible p-2"
+    role="alert"
+    id="alertSuccess"
+    style="display: none; text-align: center"
     >
       <button
         type="button"
@@ -116,8 +138,8 @@
       ></table>
     </div>
 
-    <div style="width: 100%; text-align: center; bottom: 5px">
-      <p class="font-weight-light">
+    <div  style="width: 100%; text-align: center; p-10;" >
+      <p class="font-weight-light user-select-none;">
         This is an implementation of the Volatility 3 Open Source Framework as a
         GUI adapted by Christopher Place.
       </p>
@@ -125,5 +147,6 @@
 
     <script src="interpreter.js"></script>
     <script src="updates.js"></script>
+  
   </body>
 </html>

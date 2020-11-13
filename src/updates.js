@@ -24,7 +24,13 @@ function pluginUpdate(){
     //scriptPath : path.join('resources','app','src'),
   };
   PythonShell.run("plugins.py", options, function (err, plugins) {
-    console.log(err ? "Error Updating Plugin List" : "Plugin List Updated");
+    if(err){
+      document.getElementById("alertError").innerHTML ="<strong>Error:</strong> Could not update plugin list."
+      $("#alertError").show(); }
+    else {
+      document.getElementById("alertSuccess").innerHTML ="<strong>Success:</strong> Plugins list updated.";
+      $("#alertSuccess").show();
+    }
   });
 
   $.getJSON("./plugins.json", function (data) {
@@ -45,11 +51,13 @@ function volatilityUpdate(){
             "volatilityfoundation/volatility3",
             "./src/volatility3",
             function (err) {
-              console.log(
-                err
-                  ? "Error downloading latest git updates for Volatility"
-                  : "Success downloading latest git updates for Volatility"
-              );
+                if(err){
+                  document.getElementById("alertError").innerHTML ="<strong>Error:</strong> Could not update Volatility."
+                  $("#alertError").show(); }
+                else {
+                  document.getElementById("alertSuccess").innerHTML ="<strong>Success:</strong> Volatility updated.";
+                  $("#alertSuccess").show();
+                }
             }
           );
 }
@@ -81,8 +89,13 @@ $("#platform").change(function (event) {
 });
 
 // Removes pop-up for errors when clicked
-$("#pythonError").on("click", function (event) {
-  $("#pythonError").hide();
+$("#alertError").on("click", function (event) {
+  $("#alertError").hide();
+});
+
+//Removes pop-up for success alert when clicked
+$("#alertSuccess").on("click", function (event) {
+  $("#alertSuccess").hide();
 });
 
 //Future save buttons

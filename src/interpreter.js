@@ -25,9 +25,9 @@ function getData() {
     typeof document.getElementsByTagName("input")[0].files[0] === "undefined"
   ) {
     console.log("Error file not defined");
-    document.getElementById("pythonError").innerHTML =
+    document.getElementById("alertError").innerHTML =
       "<strong>Error:</strong> File not defined.";
-    $("#pythonError").show();
+    $("#alertError").show();
   } else {
     filePath = document.getElementsByTagName("input")[0].files[0].path;
     command = document.getElementById("command").value;
@@ -57,9 +57,9 @@ function getData() {
     //To be expanded to have it clickable with greater detail.
     pyShell.on("error", function (err) {
       console.log(" error ", err);
-      document.getElementById("pythonError").innerHTML =
+      document.getElementById("alertError").innerHTML =
         "<strong>Error:</strong> Volatility encountered a problem running command.";
-      $("#pythonError").show();
+      $("#alertError").show();
     });
 
     pyShell.end(function (code, signal) {
