@@ -85,15 +85,17 @@
           type="button"
           class="btn btn-outline-danger"
           id="inputGroupFileAddon"
-          onclick="getData()"
+          onclick="getData();"
         >
           Run Command
         </button>
       </div>
     </div>
 
+
+    <div class="mx-auto w-75 text-center p-2">
     <div
-      class="mx-auto w-75 alert alert-warning alert-dismissible p-2"
+      class="alert alert-warning alert-dismissible p-2"
       role="alert"
       id="alertError"
       style="display: none; text-align: center"
@@ -109,7 +111,7 @@
     </div>
 
     <div
-    class="mx-auto w-75 alert alert-success alert-dismissible p-2"
+    class="alert alert-success alert-dismissible p-2"
     role="alert"
     id="alertSuccess"
     style="display: none; text-align: center"
@@ -124,8 +126,20 @@
       </button>
     </div>
 
+      <div id="loadingStatus" class="spinner-grow text-danger slow" role="status" style="display: none;">
+        <span class="sr-only">Loading...</span>
+      </div>
+
+    </div>
+    
+    
+
+    
+
     <!-- Output -->
     <div class="mx-auto w-75 row justify-content-center top-buffer">
+      
+
       <table
         id="output"
         class="display table-center table-striped table-bordered table-responsive table-hover" style="width:100%"

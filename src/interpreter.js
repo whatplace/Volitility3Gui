@@ -23,6 +23,7 @@ function getData() {
   //Clear error message if prexisting prior to running
   $("#alertError").hide();
   $("#alertSuccess").hide();
+  $("#loadingStatus").show();
   const path = require("path");
   let { PythonShell } = require("python-shell");
 
@@ -33,10 +34,12 @@ function getData() {
     document.getElementById("alertError").innerHTML =
       "<strong>Error:</strong> File not defined.";
     $("#alertError").show();
+    $('#loadingStatus').hide();
   } else if(document.getElementById("command").value == "default"){
     document.getElementById("alertError").innerHTML =
       "<strong>Error:</strong> Please select a command.";
     $("#alertError").show();
+    $('#loadingStatus').hide();
   } 
   else
   {
@@ -52,7 +55,7 @@ function getData() {
       //
       pythonOptions: ["-u"],
       args: ["-qrjson", "-f", filePath, command],
-      //args : ['-qrjson','frameworkinfo.FrameworkInfo'],
+
     };
 
     console.log(options);
@@ -71,9 +74,11 @@ function getData() {
       document.getElementById("alertError").innerHTML =
         "<strong>Error:</strong> Volatility encountered a problem running command.";
       $("#alertError").show();
+      $('#loadingStatus').hide();
     });
 
     pyShell.end(function (code, signal) {
+      
       if ((code = 1)) {
         let data = "";
         //Error nothing is passed vars are cleared
@@ -100,7 +105,7 @@ function getData() {
             );
           }
           // Create DataTable
-          
+          $('#loadingStatus').hide();
           $("#output").DataTable({
           dom: "<'row'<'col-sm-2'l><'col-sm-4'B><'col-sm-3'><'col-sm-3'f>>" +
           "<'row'<'col-sm-12'tr>>" +
@@ -123,6 +128,8 @@ function getData() {
         }
       }
     });
+    
   }
+  
 }
 

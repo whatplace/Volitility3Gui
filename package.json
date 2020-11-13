@@ -1,5 +1,5 @@
 {
-  "name": "Volatility3Gui",
+  "name": "volatility3Gui",
   "productName": "volatility3gui",
   "version": "1.0.0",
   "description": "Electron GUI Application of Volitilty 3 CLI Framework for Christopher Place's Capstone",

@@ -18,7 +18,7 @@ function pluginUpdate(init){
   const path = require("path");
   var options = {
     //Disable pythonPath before export
-    pythonPath: "C:\\Python38\\python.exe",
+    //pythonPath: "C:\\Python38\\python.exe",
     //Switch before export
     scriptPath: path.join("src"),
     //scriptPath : path.join('resources','app','src'),
