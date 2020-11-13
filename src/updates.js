@@ -13,7 +13,7 @@ $(document).on("change", ".custom-file-input", function (event) {
   $(this).next(".custom-file-label").html(event.target.files[0].name);
 });
 
-function pluginUpdate(){
+function pluginUpdate(init){
   let { PythonShell } = require("python-shell");
   const path = require("path");
   var options = {
@@ -27,7 +27,7 @@ function pluginUpdate(){
     if(err){
       document.getElementById("alertError").innerHTML ="<strong>Error:</strong> Could not update plugin list."
       $("#alertError").show(); }
-    else {
+    else if(init===false) {
       document.getElementById("alertSuccess").innerHTML ="<strong>Success:</strong> Plugins list updated.";
       $("#alertSuccess").show();
     }
@@ -66,7 +66,7 @@ function volatilityUpdate(){
 
 // Once the html page loads, query python to have the possible plugins gathered and added to command list
 $(document).ready(function () {
-  pluginUpdate();
+  pluginUpdate(true); //Notifies that it is initializing and not to show unless error
 });
 
 // Updates the command list based on platform selected
