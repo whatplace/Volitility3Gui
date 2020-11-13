@@ -20,6 +20,9 @@ require( 'datatables.net-buttons/js/buttons.html5.js' )();
 
 //function to run python interpreter and display as a datatable
 function getData() {
+  //Clear error message if prexisting prior to running
+  $("#alertError").hide();
+  $("#alertSuccess").hide();
   const path = require("path");
   let { PythonShell } = require("python-shell");
 
@@ -30,7 +33,13 @@ function getData() {
     document.getElementById("alertError").innerHTML =
       "<strong>Error:</strong> File not defined.";
     $("#alertError").show();
-  } else {
+  } else if(document.getElementById("command").value == "default"){
+    document.getElementById("alertError").innerHTML =
+      "<strong>Error:</strong> Please select a command.";
+    $("#alertError").show();
+  } 
+  else
+  {
     filePath = document.getElementsByTagName("input")[0].files[0].path;
     command = document.getElementById("command").value;
     var options = {
@@ -91,23 +100,26 @@ function getData() {
             );
           }
           // Create DataTable
+          
           $("#output").DataTable({
           dom: "<'row'<'col-sm-2'l><'col-sm-4'B><'col-sm-3'><'col-sm-3'f>>" +
           "<'row'<'col-sm-12'tr>>" +
           "<'row'<'col-sm-5'i><'col-sm-7'p>>",
           buttons: [
-            { extend: 'copy', className: 'btn btn-outline-primary' },
-            { extend: 'csv', className: 'btn btn-outline-primary' },
-            { extend: 'excel', className: 'btn btn-outline-primary' },
+            { extend: 'copy', className: 'btn btn-outline-danger' },
+            { extend: 'csv', className: 'btn btn-outline-danger' },
+            { extend: 'excel', className: 'btn btn-outline-danger' },
           ],
             data: data,
             columns: columns,
             processing: true,
+            responsive: true,
             search: {
               regex: true,
               smart: false,
             },
           });
+
         }
       }
     });
