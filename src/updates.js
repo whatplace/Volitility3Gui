@@ -67,11 +67,13 @@ function volatilityUpdate(){
 // Once the html page loads, query python to have the possible plugins gathered and added to command list
 $(document).ready(function () {
   pluginUpdate(true); //Notifies that it is initializing and not to show unless error
+  $.fn.dataTable.ext.classes.sPageButton = 'btn btn-outline-danger';
 });
 
 // Updates the command list based on platform selected
 $("#platform").change(function (event) {
-  $("#command").removeAttr("disabled");
+  $("#command").removeAttr("disabled");  
+  $('#command option:default').prop('selected', true)
   let platformChosen = document.getElementById("platform");
   let value = platformChosen[platformChosen.selectedIndex].value;
   let commandList = document
