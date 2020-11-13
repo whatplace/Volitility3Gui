@@ -8,7 +8,7 @@
 #       Command ran by Updater.js in order to get dropdown options for Windows, Mac & Linux
 #
 import json
-from typing import List
+from typing import List,Dict
 import sys
 import os
 
@@ -37,6 +37,8 @@ def get_plugins():
             nameJSON.append(pluginCommand.rsplit('.', 1)[1])
     pluginJSON = [{"OS": i, "Command": x, "Name": y}
                   for i, x, y in zip(osJSON, commandJSON, nameJSON)]
+
+
     with open('./src/plugins.json', 'w+') as json_file:
         json.dump(pluginJSON, json_file, indent=2)
     return 'Success'

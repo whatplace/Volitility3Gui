@@ -11,10 +11,12 @@
 //
 
 const $ = require("jquery");
-
-require("datatables.net-bs4")();
-require("datatables.net-responsive-bs4")();
+var dt = require( 'datatables.net' )( window, $ );
 require("download-git-repo");
+JSZip = require( 'jszip' );
+require( 'datatables.net-bs4' )();
+require( 'datatables.net-buttons-bs4' )();
+require( 'datatables.net-buttons/js/buttons.html5.js' )();
 
 //function to run python interpreter and display as a datatable
 function getData() {
@@ -90,6 +92,14 @@ function getData() {
           }
           // Create DataTable
           $("#output").DataTable({
+          dom: "<'row'<'col-sm-2'l><'col-sm-4'B><'col-sm-3'><'col-sm-3'f>>" +
+          "<'row'<'col-sm-12'tr>>" +
+          "<'row'<'col-sm-5'i><'col-sm-7'p>>",
+          buttons: [
+            { extend: 'copy', className: 'btn btn-outline-primary' },
+            { extend: 'csv', className: 'btn btn-outline-primary' },
+            { extend: 'excel', className: 'btn btn-outline-primary' },
+          ],
             data: data,
             columns: columns,
             processing: true,
@@ -104,6 +114,3 @@ function getData() {
   }
 }
 
-//Function to be created to save json as a csv, excel or straight json
-//To all be used to save logs?
-function exportData(format, data) {}
