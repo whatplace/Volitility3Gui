@@ -20,8 +20,8 @@ function pluginUpdate(init){
     //Disable pythonPath before export
     //pythonPath: "C:\\Python38\\python.exe",
     //Switch before export
-    scriptPath: path.join("src"),
-    //scriptPath : path.join('resources','app','src'),
+    //scriptPath: path.join("src"),
+    scriptPath : path.join('resources','app','src'),
   };
   PythonShell.run("plugins.py", options, function (err, plugins) {
     if(err){
@@ -62,8 +62,6 @@ function volatilityUpdate(){
           );
 }
 
-
-
 // Once the html page loads, query python to have the possible plugins gathered and added to command list
 $(document).ready(function () {
   pluginUpdate(true); //Notifies that it is initializing and not to show unless error
@@ -98,9 +96,4 @@ $("#alertError").on("click", function (event) {
 //Removes pop-up for success alert when clicked
 $("#alertSuccess").on("click", function (event) {
   $("#alertSuccess").hide();
-});
-
-//Future save buttons
-$("#save").on("click", function (event) {
-  console.log("test");
 });

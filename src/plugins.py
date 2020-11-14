@@ -38,9 +38,9 @@ def get_plugins():
     pluginJSON = [{"OS": i, "Command": x, "Name": y}
                   for i, x, y in zip(osJSON, commandJSON, nameJSON)]
     #DEV
-    outputPath = './src/plugins.json'
+    #outputPath = './src/plugins.json'
     #PROD
-    #outputPath = './plugins.json'
+    outputPath = './plugins.json'
     with open(outputPath, 'w+') as json_file:
         json.dump(pluginJSON, json_file, indent=2)
     return 'Success'

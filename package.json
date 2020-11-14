@@ -1,6 +1,6 @@
 {
-  "name": "volatility3Gui",
-  "productName": "volatility3gui",
+  "name": "volatility3gui",
+  "productName": "Volatility3Gui",
   "version": "1.0.0",
   "description": "Electron GUI Application of Volitilty 3 CLI Framework for Christopher Place's Capstone",
   "main": "src/index.js",
@@ -14,7 +14,7 @@
   },
   "keywords": [],
   "author": {
-    "name": "whatplace",
+    "name": "Christopher Place",
     "email": "Christopher.place99@gmail.com"
   },
   "license": "MIT",
