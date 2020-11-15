@@ -18,10 +18,10 @@ function pluginUpdate(init){
   const path = require("path");
   var options = {
     //Disable pythonPath before export
-    //pythonPath: "C:\\Python38\\python.exe",
+    pythonPath: "C:\\Python38\\python.exe",
     //Switch before export
-    //scriptPath: path.join("src"),
-    scriptPath : path.join('resources','app','src'),
+    scriptPath: path.join("src"),
+    //scriptPath : path.join('resources','app','src'),
   };
   PythonShell.run("plugins.py", options, function (err, plugins) {
     if(err){
@@ -43,6 +43,29 @@ function pluginUpdate(init){
       );
     });
   });
+
+}
+
+function pythonDepend(){
+  let { PythonShell } = require("python-shell");
+  const path = require("path");
+  var options = {
+    //Disable pythonPath before export
+    pythonPath: "C:\\Python38\\python.exe",
+    //Switch before export
+    scriptPath: path.join("src"),
+    //scriptPath : path.join('resources','app','src'),
+  };
+  PythonShell.run("pythonDepend.py", options, function (err) {
+    if(err){
+      document.getElementById("alertError").innerHTML ="<strong>Error:</strong> Unable to update Pip dependencies."
+      $("#alertError").show(); }
+    else{
+      document.getElementById("alertSuccess").innerHTML ="<strong>Success:</strong> Pip dependencies updated.";
+      $("#alertSuccess").show();
+    }
+  });
+
 }
 
 function volatilityUpdate(){
