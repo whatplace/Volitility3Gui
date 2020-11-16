@@ -17,11 +17,8 @@ function pluginUpdate(init){
   let { PythonShell } = require("python-shell");
   const path = require("path");
   var options = {
-    //Disable pythonPath before export
-    pythonPath: "C:\\Python38\\python.exe",
-    //Switch before export
-    scriptPath: path.join("src"),
-    //scriptPath : path.join('resources','app','src'),
+    //scriptPath: path.join("src"),
+    scriptPath : path.join('resources','app','src'),
   };
   PythonShell.run("plugins.py", options, function (err, plugins) {
     if(err){
@@ -32,6 +29,8 @@ function pluginUpdate(init){
       $("#alertSuccess").show();
     }
   });
+
+  document.getElementById("command").innerHTML = '<option value="default" selected disabled>Choose Command</option>'
 
   $.getJSON("./plugins.json", function (data) {
     $.each(data, function (key, command) {
@@ -53,8 +52,8 @@ function pythonDepend(){
     //Disable pythonPath before export
     pythonPath: "C:\\Python38\\python.exe",
     //Switch before export
-    scriptPath: path.join("src"),
-    //scriptPath : path.join('resources','app','src'),
+    //scriptPath: path.join("src"),
+    scriptPath : path.join('resources','app','src'),
   };
   PythonShell.run("pythonDepend.py", options, function (err) {
     if(err){

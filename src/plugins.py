@@ -12,8 +12,7 @@ from typing import List,Dict
 import sys
 import os
 
-vol_dir = os.path.join(os.path.dirname(
-    os.path.abspath(__file__)), 'volatility3')
+vol_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'volatility3')
 #print (vol_dir)
 sys.path.insert(0, vol_dir)
 # print(sys.path)
