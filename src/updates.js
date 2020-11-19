@@ -14,8 +14,10 @@ $(document).on("change", ".custom-file-input", function (event) {
     typeof document.getElementsByTagName("input")[0].files[0] === "undefined"
   ) {
     $(this).next(".custom-file-label").html("Select File");
+
   }else{
   $(this).next(".custom-file-label").html(event.target.files[0].name);
+
   }
 });
 
@@ -51,6 +53,7 @@ function pluginUpdate(init){
 
 }
 
+//Update python dependencies using pip script
 function pythonDepend(){
   let { PythonShell } = require("python-shell");
   const path = require("path");
@@ -73,6 +76,7 @@ function pythonDepend(){
 
 }
 
+//Update Volatility by pulling git repo
 function volatilityUpdate(){
   const download = require("download-git-repo");
           download(
@@ -99,7 +103,7 @@ $(document).ready(function () {
 // Updates the command list based on platform selected
 $("#platform").change(function (event) {
   $("#command").removeAttr("disabled");  
-  $('#command option:default').prop('selected', true)
+  $("#command option:default").prop("selected", true)
   let platformChosen = document.getElementById("platform");
   let value = platformChosen[platformChosen.selectedIndex].value;
   let commandList = document
@@ -124,4 +128,11 @@ $("#alertError").on("click", function (event) {
 //Removes pop-up for success alert when clicked
 $("#alertSuccess").on("click", function (event) {
   $("#alertSuccess").hide();
+});
+
+//Opens link for volatility in default browser instead of in app
+let shell = require("electron").shell
+$('a').click(function(url){
+  url.preventDefault();
+  shell.openExternal(this.href);
 });
