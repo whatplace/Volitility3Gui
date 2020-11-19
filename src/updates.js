@@ -10,15 +10,21 @@
 
 // Updates File label whenever a file is selected to be displayed on Screen
 $(document).on("change", ".custom-file-input", function (event) {
+  if (
+    typeof document.getElementsByTagName("input")[0].files[0] === "undefined"
+  ) {
+    $(this).next(".custom-file-label").html("Select File");
+  }else{
   $(this).next(".custom-file-label").html(event.target.files[0].name);
+  }
 });
 
 function pluginUpdate(init){
   let { PythonShell } = require("python-shell");
   const path = require("path");
   var options = {
-    //scriptPath: path.join("src"),
-    scriptPath : path.join('resources','app','src'),
+    scriptPath: path.join("src"),
+    //scriptPath : path.join('resources','app','src'),
   };
   PythonShell.run("plugins.py", options, function (err, plugins) {
     if(err){
@@ -52,8 +58,8 @@ function pythonDepend(){
     //Disable pythonPath before export
     pythonPath: "C:\\Python38\\python.exe",
     //Switch before export
-    //scriptPath: path.join("src"),
-    scriptPath : path.join('resources','app','src'),
+    scriptPath: path.join("src"),
+    //scriptPath : path.join('resources','app','src'),
   };
   PythonShell.run("pythonDepend.py", options, function (err) {
     if(err){
