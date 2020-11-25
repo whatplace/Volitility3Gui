@@ -13,9 +13,8 @@ import sys
 import os
 
 vol_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'volatility3')
-#print (vol_dir)
 sys.path.insert(0, vol_dir)
-# print(sys.path)
+
 from volatility.framework import constants, interfaces
 from volatility import framework, plugins
 import volatility
@@ -36,9 +35,7 @@ def get_plugins():
             nameJSON.append(pluginCommand.rsplit('.', 1)[1])
     pluginJSON = [{"OS": i, "Command": x, "Name": y}
                   for i, x, y in zip(osJSON, commandJSON, nameJSON)]
-    #DEV
-    #outputPath = './src/plugins.json'
-    #PROD
+
     outputPath = './plugins.json'
     with open(outputPath, 'w+') as json_file:
         json.dump(pluginJSON, json_file, indent=2)
