@@ -25,8 +25,7 @@ function pluginUpdate(init){
   let { PythonShell } = require("python-shell");
   const path = require("path");
   var options = {
-    scriptPath: path.join("src"),
-    //scriptPath : path.join('resources','app','src'),
+  scriptPath : path.join('resources','app','src'),
   };
   PythonShell.run("plugins.py", options, function (err, plugins) {
     if(err){
@@ -58,11 +57,7 @@ function pythonDepend(){
   let { PythonShell } = require("python-shell");
   const path = require("path");
   var options = {
-    //Disable pythonPath before export
-    pythonPath: "C:\\Python38\\python.exe",
-    //Switch before export
-    scriptPath: path.join("src"),
-    //scriptPath : path.join('resources','app','src'),
+  scriptPath : path.join('resources','app','src'),
   };
   PythonShell.run("pythonDepend.py", options, function (err) {
     if(err){
