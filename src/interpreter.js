@@ -46,16 +46,9 @@ function getData() {
     filePath = document.getElementsByTagName("input")[0].files[0].path;
     command = document.getElementById("command").value;
     var options = {
-      //Disable pythonPath before export
-      //Replace scriptPath before export
-      //pythonPath: "C:\\Python38\\python.exe",
-      scriptPath: path.join("src", "volatility3"),
-      //
-      //scriptPath : path.join('resources','app','src','volatility3'),
-      //
+      scriptPath : path.join('resources','app','src','volatility3'),
       pythonOptions: ["-u"],
       args: ["-qrjson", "-f", filePath, command],
-
     };
 
     console.log(options);
