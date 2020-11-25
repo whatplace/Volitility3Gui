@@ -132,7 +132,7 @@ $("#alertSuccess").on("click", function (event) {
 
 //Opens link for volatility in default browser instead of in app
 let shell = require("electron").shell
-$('a').click(function(url){
+$('a[href^="https://"]').click(function(url){
   url.preventDefault();
   shell.openExternal(this.href);
 });
