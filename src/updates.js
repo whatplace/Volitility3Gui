@@ -76,7 +76,7 @@ function volatilityUpdate(){
   const download = require("download-git-repo");
           download(
             "volatilityfoundation/volatility3",
-            "./src/volatility3",
+            "./resources/app/src/volatility3",
             function (err) {
                 if(err){
                   document.getElementById("alertError").innerHTML ="<strong>Error:</strong> Could not update Volatility."
